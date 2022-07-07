@@ -5,22 +5,23 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "rm -rf ../AjithKumarvm.github.io/sprinter && rm -rf dist && yarn build && cp -r dist ../AjithKumarvm.github.io/sprinter"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/vite-plugin": "^3.1.4",
     "chart.js": "^3.8.0",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-chartjs-2": "^4.2.0",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.2",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
     "zustand": "^3.7.1"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^1.0.7",
     "path": "^0.12.7",
     "typescript": "^4.5.4",
