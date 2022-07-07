@@ -1,6 +1,6 @@
 import { HomeStore, Task } from "../../store/interface"
 import useStore from "../../store"
-import css from './styles.css'
+import css, {splitItem} from './styles.css'
 
 const processDailyData = (weekHours: number, total: number, day : number): number  => {
     const remaining = total - (weekHours * day)
@@ -25,14 +25,13 @@ const Split = () => {
         daysInAWeek: state.daysInAWeek
     }))
     if (!workHours || !sprintLength || !daysInAWeek) return <div>invalid settings</div>
-    window.console.log('ani', {workHours, sprintLength, daysInAWeek})
-    const total = tasks.reduce((sum: number, task: Task) => {
+    const total = tasks.filter((task) => task.active).reduce((sum: number, task: Task) => {
         return Number(sum) + Number(task.duration)
     }, 0)
     const daysNeeded = Math.ceil(total / workHours)
     const weekDaysGenerated = Array(daysNeeded + 2).fill('day')
     return <div className={css.container}>
-            <h1>SPRINT PLAN FOR YOU </h1>
+            <h1>SERIAL SPRINT PLAN FOR YOU </h1>
             Total: {total}h
             {weekDaysGenerated.map((_, index) => {
                 const picker: number = index % daysInAWeek
@@ -41,7 +40,9 @@ const Split = () => {
                 const splitItemOverflow = (index + 1) >  sprintLength
                 const dailyHours = processDailyData(workHours, total, index)
                 if (dailyHours <= 0) return
-                return <div className={splitItemOverflow ? css.splitItemOverflow : css.splitItem}>
+                return <div className={splitItem({
+                    overflow: splitItemOverflow
+                })}>
                     {day}:
                     {dailyHours}h
                     {showWeekSplit ? <><br /><br /></> : ''}

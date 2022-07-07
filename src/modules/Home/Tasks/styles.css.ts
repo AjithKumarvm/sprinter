@@ -8,4 +8,13 @@ export default {
     flex: 1,
     overflow: 'auto',
   }),
+  header: style({
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'left',
+  }),
+  button: style({
+    alignSelf: 'center',
+    marginLeft: 20
+  })
 }; 
