@@ -25,6 +25,12 @@ export const splitItem = recipe({
       false: {
         color: 'black'
       }
+    },
+    speed: {
+      fast: {
+        color: 'yellow',
+        border: 10,
+      }
     }
-  },
+  }
 })

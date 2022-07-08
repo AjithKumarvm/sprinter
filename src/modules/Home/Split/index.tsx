@@ -41,7 +41,7 @@ const Split = () => {
                 const dailyHours = processDailyData(workHours, total, index)
                 if (dailyHours <= 0) return
                 return <div className={splitItem({
-                    overflow: splitItemOverflow
+                    overflow: splitItemOverflow,
                 })}>
                     {day}:
                     {dailyHours}h

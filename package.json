@@ -9,14 +9,20 @@
     "deploy": "rm -rf ../AjithKumarvm.github.io/sprinter && rm -rf dist && yarn build && cp -r dist ../AjithKumarvm.github.io/sprinter"
   },
   "dependencies": {
+    "@significa/eslint-config": "^2.0.1",
+    "@significa/prettier-config": "^2.0.0",
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/recipes": "^0.2.5",
     "@vanilla-extract/vite-plugin": "^3.1.4",
     "chart.js": "^3.8.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
+    "vite-tsconfig-paths": "^3.5.0",
     "zustand": "^3.7.1"
   },
   "devDependencies": {

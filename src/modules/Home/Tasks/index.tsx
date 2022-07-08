@@ -1,3 +1,4 @@
+import Button from "common/UI/Button"
 import useStore from "../../store/"
 import AddTask from "./AddTask"
 import css from './styles.css'
@@ -12,8 +13,8 @@ const Tasks = () => {
         updateActiveField(id)
     }
     return <div className={css.container}>
-        <div className={css.header}><h1>ALL TASKS</h1>
-        <button className={css.button} onClick={clearAll}>CLEAR ALL</button>
+        <div className={css.header}><h1>ALL TASKS</h1>&nbsp;&nbsp;
+        <Button onClick={clearAll}>CLEAR ALL</Button>
         </div>
         {tasks.map((task) => {
             return <div key={task.id}>

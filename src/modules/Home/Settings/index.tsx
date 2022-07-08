@@ -1,3 +1,4 @@
+import Input from "common/UI/Input"
 import useStore from "../../store"
 import css from './styles.css'
 
@@ -8,8 +9,8 @@ export const Settings = () => {
         updateField(field, e.target.value)
     }
     return <div className={css.container}>
-        Work Hours(hours)<input type="number" onChange={onChange('workHours')} value={workHours}></input>&nbsp;
-        Work Days(days)<input type="number" onChange={onChange('daysInAWeek')} value={daysInAWeek}></input>&nbsp;
-        Sprint length(days)<input type="number" onChange={onChange('sprintLength')} value={sprintLength}></input>&nbsp;
+        <Input label="Work Hours(hours)" type="number" onChange={onChange('workHours')} value={workHours} />&nbsp;
+        <Input label="Work Days(days)" type="number" onChange={onChange('daysInAWeek')} value={daysInAWeek} />&nbsp;
+        <Input label="Sprint length(days)" type="number" onChange={onChange('sprintLength')} value={sprintLength} />&nbsp;
     </div>
 }

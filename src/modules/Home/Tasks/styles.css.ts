@@ -12,9 +12,6 @@ export default {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'left',
-  }),
-  button: style({
-    alignSelf: 'center',
-    marginLeft: 20
+    alignItems: 'center'
   })
 }; 
